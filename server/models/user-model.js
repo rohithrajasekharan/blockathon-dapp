@@ -8,16 +8,12 @@ var UserSchema = mongoose.Schema({
 	},
 	email: {
 		type: String,
-		unique: true,
-		sparse: true
+		unique: true
 	},
   password: {
 		type: String
 	},
   googleId: {
-    type: String
-  },
-	facebookId: {
     type: String
   },
 	avatar: {

@@ -27,10 +27,8 @@ app.use(passport.session());
 app.use('/auth', authRoutes);
 
 mongoose.Promise = global.Promise;
-
-mongoose.connect(config.dbUrl, {
-  useMongoClient: true
-}, () => {
+mongoose.set('useCreateIndex', true);
+mongoose.connect(config.dbUrl, { useNewUrlParser: true }, () => {
     console.log("connected to db");
 });
 
