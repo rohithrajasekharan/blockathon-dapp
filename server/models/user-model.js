@@ -13,9 +13,6 @@ var UserSchema = mongoose.Schema({
   password: {
 		type: String
 	},
-  googleId: {
-    type: String
-  },
 	avatar: {
 		type: String
 	}

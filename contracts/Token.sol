@@ -10,12 +10,14 @@ contract Token {
     address indexed _to,
     uint256 _value
     );
+
   event Approval(
       address indexed _owner,
       address indexed _spender,
       uint256 _value
       );
   mapping (address => uint256) public balanceOf;
+  mapping (string => uint256) public walletAddress;
     mapping (address => mapping (address => uint256)) public allowance;
   constructor (uint256 _initialSupply) public  {
     balanceOf[msg.sender] = _initialSupply;
@@ -26,6 +28,10 @@ contract Token {
     balanceOf[msg.sender] -= _value;
     balanceOf[_to] += _value;
     emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+  function registerMail(string _mail, address _sender) public returns(bool success){
+    walletAddress[_mail] == _sender;
     return true;
   }
   function approve(address _spender, uint256 _value) public returns(bool success){
