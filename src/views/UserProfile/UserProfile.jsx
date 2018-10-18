@@ -84,7 +84,7 @@ class UserProfileComponent extends React.Component {
   }
   transferTokens(number) {
     this.token.deployed().then((tokenInstance=>{
-       return tokenInstance.transfer('0x4E5A144062AC8095c7d442FD1C2072aD5FeE7a73', number,  {from: this.state.account, value: number * this.state.tokenPrice, gas: 500000 }).then((receipt)=>{
+       return tokenInstance.transfer('0xCc1cfC4866B1dA316286836E7016CDe298079F65', number,  {from: this.state.account, value: number * this.state.tokenPrice, gas: 500000 }).then((receipt)=>{
          console.log(this.state.balance);
        })
     }))
